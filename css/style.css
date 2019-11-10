@@ -420,6 +420,9 @@ padding-top:50px;
   #firstbackground{
     height:70%;
   }
+  #firstani{
+    height:60vh;
+  }
 }
 @media screen and (max-width:430px){
   #firstbackground{
