@@ -425,6 +425,9 @@ padding-top:50px;
   #firstbackground{
     display:none;
   }
+  #introtext{
+    max-width:60vw;
+  }
 }
 @keyframes ontoscreen {
   from {
