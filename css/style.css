@@ -76,9 +76,7 @@ body{
   margin: 0;
   padding: 1em 0 0;
   /* Hide shadow w/ -8px while 'closed' */
-  -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
-     -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
-          box-shadow: -8px 0 8px rgba(0,0,0,.5);
+
   min-height: 100%;
   width: 200px;
 
