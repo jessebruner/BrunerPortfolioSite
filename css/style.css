@@ -345,6 +345,20 @@ nav a:hover{
    ============================
    ==========================
 */
+h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight:bold;
+  font-size:2em;
+}
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+      font-size:1em;
+}
+#beginning_h1 {
+  padding-top:15px;
+  padding-left:20px;
+  display:block;
+}
 #herosection {
   background: rgb(60,120,216);
 background: -moz-linear-gradient(299deg, rgba(60,120,216,1) 0%, rgba(68,109,206,1) 17%, rgba(75,100,197,1) 17%, rgba(80,94,191,1) 24%, rgba(98,71,170,0.9539215344340861) 100%);
@@ -364,12 +378,29 @@ width:100%;
   margin-top:20vh;
   animation-name:ontoscreen;
   animation-duration:2.5s;
+  border-radius:25px 0px 0px 25px;
 }
+
+#introtext{
+display:inline-block;
+max-width:40vw;
+margin-bottom:100px;
+padding-left:20px;
+padding-top:50px;
+}
+#portrait {
+  height:75%;
+  max-height:265px;
+  float:right;
+  padding-right:100px;
+}
+
 @media screen and (max-width:901px){
   #firstani{
     width:100vw;
     margin-top:15vh;
   }
+
 }
 @keyframes ontoscreen {
   from {
