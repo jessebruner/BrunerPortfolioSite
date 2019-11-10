@@ -2,8 +2,6 @@ html{
     scroll-behavior: smooth;
 }
 
-
-
 body{
   background-color:;
   font-size: 18px;
@@ -11,6 +9,199 @@ body{
   padding: 0;
 }
 
+/* ===============================
+   ===============================
+   ===============================
+   BEGIN NAVIGATION CSS
+   ===============================
+   ===============================
+   ===============================
+*/
+#navigations {
+  background-color:#fff;
+  height:15vh;
+  max-height:75px;
+  min-height:70px;
+  width:100%;
+}
+
+/* BREAKPOINT */
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Button styling */
+.menu-toggle {
+  display: inline-block;
+  float:right;
+  padding: 25px 50px;
+  line-height: 1em;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: #3c78d8;
+}
+
+/*
+ Default styles + Mobile first
+ Offscreen menu style
+*/
+.main-menu {
+  position: absolute;
+  display: none;
+  left: -200px;
+  top: 0;
+  height: 100%;
+	overflow-y: none;
+	overflow-x: none;
+	transition: left 0.3s ease, box-shadow 0.3s ease;
+	z-index: 999;
+}
+
+.main-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 1em 0 0;
+  /* Hide shadow w/ -8px while 'closed' */
+  -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+     -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+          box-shadow: -8px 0 8px rgba(0,0,0,.5);
+  min-height: 100%;
+  width: 200px;
+  background: #fff;
+}
+
+.main-menu a {
+  display: block;
+  padding: .1em 15px;
+  line-height: 1em;
+  font-size: 1em;
+  color: #333;
+  text-decoration: none;
+
+}
+
+.main-menu a:hover,
+.main-menu a:focus {
+  color:#3c78d8;
+}
+
+.main-menu .menu-close {
+  position: absolute;
+  right: 10px;
+  top: 17px;
+}
+
+/*
+ On small devices, allow it to toggle...
+*/
+/*
+ :target for non-JavaScript
+ [aria-expanded] will be used if/when JavaScript is added to improve interaction, though it's completely optional.
+*/
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+  display: block;
+  left: 0;
+  outline: none;
+  -moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  -webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+  box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
+
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+  z-index: 1001;
+}
+
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+  position: relative;
+  z-index: 1000;
+}
+
+/*
+ We could us `.main-menu:target:after`, but
+ it wouldn't be clickable.
+*/
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop{
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: #000;
+  background: rgba(0,0,0,.85);
+  cursor: default;
+}
+
+@supports (position: fixed) {
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded="true"] + .backdrop{
+    position: fixed;
+  }
+}
+
+/*
+ Larger screen styling
+ Horizontal menu
+*/
+@media (min-width: 901px) {
+  .menu-toggle,
+  .main-menu .menu-close {
+    display: none;
+  }
+
+  /* Undo positioning of off-canvas menu */
+  .main-menu {
+    position: relative;
+		float:right;
+		top: 25px;
+		height: auto;
+    display: block;
+    overflow:hidden;
+    left:-100px;
+  }
+
+  .main-menu ul {
+    display: flex;
+
+    /* Undo off-canvas styling */
+    padding: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+
+  .main-menu a {
+    color: #000;
+    border: 0 !important; /* Remove borders from off-canvas styling */
+  }
+
+  .main-menu a:hover,
+  .main-menu a:focus {
+    background: none; /* Remove background from off-canvas styling */
+    color: #3c78d8;
+  }
+}
 
 nav ul{
   list-style-type: none;
@@ -19,8 +210,8 @@ nav ul{
 }
 
 nav li{
-  padding-right:50px;
   font-family: 'Source Sans Pro', sans-serif;
+  padding-left:30px;
   display:inline;
 }
 
@@ -34,15 +225,14 @@ nav a:hover{
     text-decoration:underline;
 }
 
-
 #logo {
   float:left;
   margin-left:5%;
   margin-top: 15px;
   box-shadow: 4px 5px 10px #000020;
-  min-height:80px;
-  height:20%;
-  max-height:150px;
+  min-width:100px;
+  width:20%;
+  max-width:150px;
   position: absolute;
   transition: all .3s;
 }
@@ -72,8 +262,6 @@ nav a:hover{
   #logo2 {
   display:inline-flex;
   font-size:1em;
-
-
 }
 
   #logo1 {
@@ -102,115 +290,16 @@ nav a:hover{
 }
 
 
-footer{
-  background-color: black;
-  color: white;
-  grid-column: 1 / -1;  /*Can you explain what this does?*/
-  grid-row: 7 / 8;   /*Can you rewrite it?*/
-  padding-top: 30px;
-  text-align: center;
-}
+/* ===============================
+   ================================
+   ===============================
+   END OF NAV CSS
+   ==============================
+   ============================
+   ==========================
+*/
 
 
-.container{
-  display:grid;
-/*  grid-template-columns: 100px 500px 100px;
-  grid-template-rows: 30px auto auto auto auto auto 100px;
-  grid-row-gap:15px;
-  width:100vw; */
-}
-
-.nav{
-  /*Provided*/
-  background-color: #fff;
-  padding: 20px 0px;
-  min-height:50px;
-  text-align: right;
-}
-
-
-header{
-  /* background-attachment: fixed;
-  background-image: url(../images/header.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  */
-  background: rgb(151,113,255);
- background: -moz-linear-gradient(329deg, rgba(151,113,255,1) 0%, rgba(115,0,255,1) 100%);
- background: -webkit-linear-gradient(329deg, rgba(151,113,255,1) 0%, rgba(115,0,255,1) 100%);
- background: linear-gradient(329deg, rgba(151,113,255,1) 0%, rgba(115,0,255,1) 100%);
- filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9771ff",endColorstr="#7300ff",GradientType=1);
-  height: 100vh;
-  width: 100vw;
-}
-
-header p{
-  color: white;
-  font-size: 24px;
-  padding: 0 100px;
-  text-align: center;
-}
-
-.about-image{
-  grid-column: 1 / -1;
-  grid-row: 3 / 4;
-  max-height:700px;
-  overflow:hidden;
-  object-fit:cover;
-
-}
-
-.about{
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
-}
-
-.method-image{
-  grid-column: 1 / -1;
-  grid-row: 4 / 5;
-  max-height: 700px;
-  overflow:hidden;
-  object-fit:cover;
-}
-
-.method{
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
-}
-
-.clients-image{
- grid-column: 1 / -1;
- grid-row: 5 / 6;
- max-height: 700px;
- overflow:hidden;
- object-fit:cover;
-}
-
-.clients{
- grid-column: 2 / 3;
- grid-row: 5 / 6;
-}
-
-.contact-image{
-   grid-column: 1 / -1;
-   grid-row: 6 / 7;
-   max-height: 700px;
-   overflow:hidden;
-   object-fit:cover;
-}
-
-.contact{
-   grid-column: 2 / 3;
-   grid-row: 6 / 7;
-}
-
-.text-block{
-  background-color: rgba(255, 255, 255, .8);
-  border: 10px solid black;
-  padding: 30px;
-
-}
 
 
 /*tablet*/

@@ -11,43 +11,50 @@
   <link rel="stylesheet" type="text/css" href="css/html5reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400&display=swap" rel="stylesheet">
-
+  <script src="https://kit.fontawesome.com/e211125178.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- Begin body -->
 <body>
   <!-- Hidden visually, intended for screen readers -->
   <div class="skip"><a href="#main">Skip to Main Content</a></div>
-
   <!-- Begin container -->
   <div class="container">
-
   <!-- Begin top navigation bar -->
-  <a href="index.html">
-  <img src="images/logo2.jpg" id="logo" alt="Jesse Bruner portfolio site">
+
+  <header>
+  <div id="navigations">
+  <a href="#main-menu" id="main-menu-toggle" class="menu-toggle" aria-label="Open main menu">
+    <span class="sr-only">Open main menu</span>
+    <span class="fa fa-bars" aria-hidden="true"></span>
   </a>
-  <div class="nav">
-    <div id="nav">
-    <nav>
 
-      <ul>
-        <li><a href="Home">Home</a></li>
-        <li><a href="Portfolio">Portfolio</a></li>
-        <li><a href="About">About</a></li>
-        <li><a href="Resume">Resume</a></li>
-        <li><a href="Contact">Contact</a></li>
-      </ul>
-    </div>
-    </nav>
-    <button onclick="hamburger()" id="hamburgered">Click</button>
+  <a href="index.html">
+    <img src="images/logo3.jpg" id="logo" alt="Jesse Bruner portfolio site">
+  </a>
 
-  </div>
-
-
+  <nav id="main-menu" class="main-menu" aria-label="Main menu">
+    <a href="#main-menu-toggle" id="main-menu-close" class="menu-close" aria-label="Close main menu">
+      <span class="sr-only">Close main menu</span>
+      <span class="fa fa-close" aria-hidden="true"></span>
+    </a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="#main-menu-toggle"
+     class="backdrop"
+     tabindex="-1"
+     aria-hidden="true" hidden></a>
+</div>
+</header>
 <!-- Begin content -->
-  <header id="main">
-  </header>
-
+<section id="main">
+</section>
 <!-- Begin portfolio section of mainpage -->
 
 <!-- Begin footer -->
