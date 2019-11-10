@@ -388,11 +388,17 @@ margin-bottom:100px;
 padding-left:20px;
 padding-top:50px;
 }
-#portrait {
-  height:75%;
-  max-height:265px;
+#firstbackground img {
+  height:inherit;
+}
+#firstbackground{
+  display:inline;
+  width:30vw;
+  height:85%;
   float:right;
-  padding-right:100px;
+  max-height:230px;
+
+
 }
 
 @media screen and (max-width:901px){
@@ -400,7 +406,25 @@ padding-top:50px;
     width:100vw;
     margin-top:15vh;
   }
+  #firstbackground{
+    margin-right:10%;
+  }
 
+  #beginning_h1, #introtext {
+    padding-top:20px;
+    padding-left:40px;
+  }
+
+}
+@media screen and (max-width:550px){
+  #firstbackground{
+    height:70%;
+  }
+}
+@media screen and (max-width:430px){
+  #firstbackground{
+    display:none;
+  }
 }
 @keyframes ontoscreen {
   from {
