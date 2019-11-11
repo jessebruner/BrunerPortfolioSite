@@ -481,7 +481,7 @@ width:100%;
 .button a {
   text-decoration:none;
   color:white;
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .button a:hover {
   text-decoration:underline;
@@ -491,7 +491,11 @@ width:100%;
 * {
   box-sizing: border-box;
 }
-
+#formtext{
+  text-align:center;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top:20px;
+}
 /* Style inputs */
 input[type=text], select, textarea {
   width: 100%;
@@ -517,6 +521,7 @@ input[type=submit]:hover {
 /* Style the container/contact section */
 .containered {
   padding: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Create two columns that float next to eachother */
@@ -539,6 +544,9 @@ input[type=submit]:hover {
   .column, input[type=submit] {
     width: 100%;
     margin-top: 0;
+  }
+  #formtext{
+      padding-top:50px;
   }
 }
 
