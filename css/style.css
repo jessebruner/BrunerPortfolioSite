@@ -11,6 +11,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-x:hidden;
 }
 
 body{
@@ -360,7 +361,7 @@ p {
   display:block;
 }
 #herosection {
-  background: rgb(60,120,216);
+background: rgb(60,120,216);
 background: -moz-linear-gradient(299deg, rgba(60,120,216,1) 0%, rgba(68,109,206,1) 17%, rgba(75,100,197,1) 17%, rgba(80,94,191,1) 24%, rgba(98,71,170,0.9539215344340861) 100%);
 background: -webkit-linear-gradient(299deg, rgba(60,120,216,1) 0%, rgba(68,109,206,1) 17%, rgba(75,100,197,1) 17%, rgba(80,94,191,1) 24%, rgba(98,71,170,0.9539215344340861) 100%);
 background: linear-gradient(299deg, rgba(60,120,216,1) 0%, rgba(68,109,206,1) 17%, rgba(75,100,197,1) 17%, rgba(80,94,191,1) 24%, rgba(98,71,170,0.9539215344340861) 100%);
@@ -383,7 +384,7 @@ width:100%;
 
 #introtext{
 display:inline-block;
-max-width:40vw;
+max-width:45vw;
 margin-bottom:100px;
 padding-left:20px;
 padding-top:50px;
@@ -427,7 +428,7 @@ padding-top:50px;
     display:none;
   }
   #introtext{
-    max-width:70vw;
+    max-width:74vw;
     min-width:200px;
   }
 }
@@ -456,7 +457,7 @@ width:100%;
   padding-top:50px;
 }
 #secondh1{
-  margin-top:-100px;
+  margin-top:-75px;
   color:black;
   text-align:center;
   font-weight:600;
@@ -470,7 +471,7 @@ width:100%;
   background-color:black;
   color:white;
   text-align:center;
-  padding-top:25px;
+  padding-top:15px;
   text-decoration:none;
   height:50px;
   width:120px;
@@ -514,9 +515,7 @@ input[type=submit]:hover {
 }
 
 /* Style the container/contact section */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
+.containered {
   padding: 10px;
 }
 
